@@ -19,6 +19,7 @@ public class main {
 		ps.println(Utils.ANSI_YELLOW + archivo.leerConReader(archivo.getArchivo()) + Utils.ANSI_RESET);
 		ps.println("Color normal");
 		ps.println(Utils.ANSI_PURPLE + "\t\t colores mas lindos");
+		ps.println(Utils.ANSI_MAGENTA + "\t\t lau" + Utils.ANSI_RESET);
 	}
 
 }
