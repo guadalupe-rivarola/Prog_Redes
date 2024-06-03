@@ -133,5 +133,52 @@ public class ClaseEjercicios {
 		}
 	}
 
+	public static String Ejercicio1G() {
+		
+		ps.println("Ingrese su signo zodiacal: ");
+		String signo = entradaDeDatos().toUpperCase();
+		
+		switch(signo) {
+		case "ACUARIO":
+			return "Enero o Febrero";
+		
+		case "PISCIS":
+		return "Febrero o Marzo";
+
+		case "ARIES":
+		return "Marzo o Abril";
+
+		case "TAURO":
+		return "Abril o Mayo";
+
+		case "GEMINIS":
+		return "Mayo o Junio";
+
+		case "CANCER":
+		return "Junio o Julio";
+
+		case "LEO":
+		return "Julio o Agosto";
+		
+		case "VIRGO":
+		return "Agosto o Septiembre";
+
+		case "LIBRA":
+		return "Septiembre u Octubre";
+		
+		case "ESCORPIO":
+		return "Octubre o Noviembre";
+			
+		case "SAGITARIO":
+		return "Noviembre o Diciembre";
+		
+		case "CAPRICORNIO":
+		return "Diciembre o Enero";
+		
+		default:
+			return "No existe ese signo zodiacal";
+				}
+		
+	}
 
 }
