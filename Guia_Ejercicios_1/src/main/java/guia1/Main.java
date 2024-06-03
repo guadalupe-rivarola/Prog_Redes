@@ -48,7 +48,7 @@ public class Main {
 						break;
 					case 6:
 						ps.println("Ejecutando Ejercicio 1 F");
-						ps.println();
+						ps.println(ClaseEjercicios.Ejercicio1F());
 						break;
 					case 7:
 						ps.println("Ejecutando Ejercicio 1 C");

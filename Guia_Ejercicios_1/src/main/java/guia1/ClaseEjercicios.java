@@ -74,6 +74,7 @@ public class ClaseEjercicios {
 	}
 	
 	public static String Ejercicio1E() {
+		
 		ps.println("Ingrese el tiempo en segundos: ");
 		String dato = entradaDeDatos();
 		int segundos = Integer.parseInt(dato);
@@ -89,4 +90,48 @@ public class ClaseEjercicios {
 		
 		return "Dias: " + dias + "  Horas: " + horas + "  Minutos: " + minutos + "  Segundos: " + segundos;
 	}
+
+	public static String Ejercicio1F() {
+		
+		try {
+			ps.println("Ingrese el precio del articulo: ");
+			String dato = entradaDeDatos();
+			double precio = Double.parseDouble(dato);
+			
+			//plan 1
+			double plan1 = precio * 0.10;
+			double descuento = precio - plan1;
+			
+			//plan 2 
+			double precioIncrementado = precio * 1.10;
+			double precioContado = precioIncrementado * 0.50;
+			double precioResto = precioIncrementado - precioContado;
+			double dosCuotas = precioResto / 2;
+			
+			//plan 3
+			double precioIncrementado2 = precio * 1.15;
+			double precioContado2 = precioIncrementado2 * 0.25;
+			double precioResto2 = precioIncrementado2 - precioContado2;
+			double cincoCuotas = precioResto2 / 5;		
+		
+			//plan 4
+			double precioIncrementado3 = precio * 1.25;
+			
+			double priParte = precioIncrementado3 * 0.60;
+			double segParte = precioIncrementado3 - priParte;
+			
+			double primerasCuotas = priParte / 4;
+			double ultimasCuotas = segParte / 4;
+			
+			return  String.format("Plan 1: 100%% al contado: %.2f $\n", descuento) +
+					String.format("Plan 2: 50%% al contado: %.2f $ y el resto en 2 cuotas iguales de: %.2f $\n", precioContado, dosCuotas)+
+					String.format("Plan 3: 25%% al contado: %.2f $ y el resto en 5 cuotas iguales de: %.2f $\n", precioContado2, cincoCuotas)+
+					String.format("Plan 4: 8 cuotas. 60%% repartido en 4 cuotas iguales de:  %.2f $ y el resto en 4 cuotas iguales de: %.2f $\n", primerasCuotas, ultimasCuotas)
+					; 
+		}catch(NumberFormatException e) {
+			return "Error: Ingrese un valor numero valido para el precio.";
+		}
+	}
+
+
 }
