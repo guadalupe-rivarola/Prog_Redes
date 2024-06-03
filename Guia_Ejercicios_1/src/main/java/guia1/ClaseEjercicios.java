@@ -53,4 +53,23 @@ public class ClaseEjercicios {
 		return "El valor del tercer angulo interior del tringulo es: " + angulo3;
 	}
 
+	public static String Ejercicio1C() {
+		ps.println("Ingrese la superficie del cuadrado (en m²): ");
+		String dato = entradaDeDatos();
+		double superficie = Double.parseDouble(dato);
+		
+		double lado = Math.sqrt(superficie) ;
+		double perimetro = 4 * lado;
+		return "El perimetro del cuadrado es de " + perimetro + "metros.";
+	}
+	
+	public static String Ejercicio1D() {
+		
+		ps.println("Ingrese la temperatura Fahrenheit: ");
+		String dato = entradaDeDatos();
+		double temF = Double.parseDouble(dato);
+		
+		double temC = (5.0 / 9.0) * (temF - 32);
+		return "La temperatura en grados Centigrados es: " + temC +"°";
+	}
 }
