@@ -18,7 +18,7 @@ public class Main {
 					ps.println("4- Ejercicio 1 D");
 					ps.println("5- Ejercicio 1 E");
 					ps.println("6- Ejercicio 1 F");
-					ps.println("7- Ejercicio 1 C");
+					ps.println("7- Ejercicio 1 G");
 					ps.println("8- Ejercicio 1 C");
 					ps.println("9- Ejercicio 1 C");
 					ps.println("0- Salir");
@@ -51,8 +51,8 @@ public class Main {
 						ps.println(ClaseEjercicios.Ejercicio1F());
 						break;
 					case 7:
-						ps.println("Ejecutando Ejercicio 1 C");
-						ps.println();
+						ps.println("Ejecutando Ejercicio 1 G");
+						ps.println(ClaseEjercicios.Ejercicio1G());
 						break;
 					case 8:
 						ps.println("Ejecutando Ejercicio 1 C");
