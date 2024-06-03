@@ -12,26 +12,21 @@ public class Main {
 	public static void main(String[] args) {
 				while (continuar) {
 					ps.println("Ingrese la opcion a ejecutar:");
-					ps.println("1- Ejercicio 1 (a)");
-					ps.println("2- Ejercicio 1 (b)");
-					ps.println("3- Ejercicio 2");
+					ps.println("1- Ejercicio 1 A");
+					ps.println("2- Ejercicio 1 B");
+					ps.println("3- Ejercicio 1 C");
 					ps.println("0- Salir");
 
 					int opcion = Main.leerOpcion();
 
 					switch (opcion) {
 					case 1:
-						ps.println("Ejecutando Ejercicio 1 A");
-						// L�gica del ejercicio 1 (1)
-							// aca llamar al metodo que resuelve el ejercicio
-							// el metodo esta en otra Class y recominedo que el metodo sea
-							// de tipo Static, asi no hay que Instanciarlo (crear el objeto)
-						
+							ps.println("Ejecutando Ejercicio 1 A");
 							ps.println(ClaseEjercicios.Ejercicio1A());
 						break;
 					case 2:
 						ps.println("Ejecutando Ejercicio 1 B");
-						// L�gica del ejercicio 1 (b)
+						ps.println(ClaseEjercicios.Ejercicio1B());
 						break;
 					case 3:
 						ps.println("Ejecutando Ejercicio 2");
