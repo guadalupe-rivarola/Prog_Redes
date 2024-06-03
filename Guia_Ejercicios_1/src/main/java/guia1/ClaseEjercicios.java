@@ -24,19 +24,20 @@ public class ClaseEjercicios {
 	}
 	
 	public static String Ejercicio1A(){
+				
+		ps.println("Ingrese la cantidad de horas trabajadas: ");
+		String datoHoras = entradaDeDatos();
+		int hora = Integer.parseInt(datoHoras);
 		
 		ps.println("Ingrese el valor por hora: ");
 		String datoHora = entradaDeDatos();
-		int hora = Integer.parseInt(datoHora);
-		
-		ps.println("Ingrese la cantidad de horas trabajadas: ");
-		String datoHoras = entradaDeDatos();
-		double cantH = Double.parseDouble(datoHoras);
+		double cantH = Double.parseDouble(datoHora);
 		
 		double sueldoBruto = hora * cantH;
 		return "El sueldo bruto es: " + sueldoBruto;
 	
 	}
+	
 	
 
 }
