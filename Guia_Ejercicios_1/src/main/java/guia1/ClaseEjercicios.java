@@ -72,4 +72,21 @@ public class ClaseEjercicios {
 		double temC = (5.0 / 9.0) * (temF - 32);
 		return "La temperatura en grados Centigrados es: " + temC +"°";
 	}
+	
+	public static String Ejercicio1E() {
+		ps.println("Ingrese el tiempo en segundos: ");
+		String dato = entradaDeDatos();
+		int segundos = Integer.parseInt(dato);
+		
+		int dias = segundos / (24 * 3600);
+		segundos = segundos % (24*3600);
+		
+		int horas = segundos / 3600;
+		segundos = segundos %= 3600;
+		
+		int minutos = segundos / 60;
+		segundos = segundos %= 60;
+		
+		return "Dias: " + dias + "  Horas: " + horas + "  Minutos: " + minutos + "  Segundos: " + segundos;
+	}
 }
