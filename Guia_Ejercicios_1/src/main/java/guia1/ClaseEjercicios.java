@@ -1,12 +1,20 @@
 package guia1;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ClaseEjercicios {
 	
 	static PrintStream ps = new PrintStream(System.out);
 	
-	public static String entradaDeDatos() {	
+	static InputStreamReader isr = new InputStreamReader(System.in);
+	static BufferedReader br = new BufferedReader(isr);
+	
+	public static String entradaDeDatos1() {	
 		String cadena = "";
 		try {
 			int Byte = -1;
@@ -26,11 +34,11 @@ public class ClaseEjercicios {
 	public static String Ejercicio1A(){
 				
 		ps.println("Ingrese la cantidad de horas trabajadas: ");
-		String datoHoras = entradaDeDatos();
+		String datoHoras = entradaDeDatos1();
 		int hora = Integer.parseInt(datoHoras);
 		
 		ps.println("Ingrese el valor por hora: ");
-		String datoHora = entradaDeDatos();
+		String datoHora = entradaDeDatos1();
 		double cantH = Double.parseDouble(datoHora);
 		
 		double sueldoBruto = hora * cantH;
@@ -41,11 +49,11 @@ public class ClaseEjercicios {
 	public static String Ejercicio1B() {
 		
 		ps.println("Ingrese el valor del primer angulo interior del triangulo: ");
-		String dato1 = entradaDeDatos();
+		String dato1 = entradaDeDatos1();
 		double angulo1 = Double.parseDouble(dato1);
 		
 		ps.println("Ingrese el valor del segundo angulo interior del triangulo: ");
-		String dato2 = entradaDeDatos();
+		String dato2 = entradaDeDatos1();
 		double angulo2 = Double.parseDouble(dato2);
 		
 		double angulo3 = 180 - (angulo1 + angulo2) ;
@@ -55,7 +63,7 @@ public class ClaseEjercicios {
 
 	public static String Ejercicio1C() {
 		ps.println("Ingrese la superficie del cuadrado (en m²): ");
-		String dato = entradaDeDatos();
+		String dato = entradaDeDatos1();
 		double superficie = Double.parseDouble(dato);
 		
 		double lado = Math.sqrt(superficie) ;
@@ -66,7 +74,7 @@ public class ClaseEjercicios {
 	public static String Ejercicio1D() {
 		
 		ps.println("Ingrese la temperatura Fahrenheit: ");
-		String dato = entradaDeDatos();
+		String dato = entradaDeDatos1();
 		double temF = Double.parseDouble(dato);
 		
 		double temC = (5.0 / 9.0) * (temF - 32);
@@ -76,7 +84,7 @@ public class ClaseEjercicios {
 	public static String Ejercicio1E() {
 		
 		ps.println("Ingrese el tiempo en segundos: ");
-		String dato = entradaDeDatos();
+		String dato = entradaDeDatos1();
 		int segundos = Integer.parseInt(dato);
 		
 		int dias = segundos / (24 * 3600);
@@ -95,7 +103,7 @@ public class ClaseEjercicios {
 		
 		try {
 			ps.println("Ingrese el precio del articulo: ");
-			String dato = entradaDeDatos();
+			String dato = entradaDeDatos1();
 			double precio = Double.parseDouble(dato);
 			
 			//plan 1
@@ -136,7 +144,7 @@ public class ClaseEjercicios {
 	public static String Ejercicio1G() {
 		
 		ps.println("Ingrese su signo zodiacal: ");
-		String signo = entradaDeDatos().toUpperCase();
+		String signo = entradaDeDatos1().toUpperCase();
 		
 		switch(signo) {
 		case "ACUARIO":
@@ -180,5 +188,64 @@ public class ClaseEjercicios {
 				}
 		
 	}
+
+	public static String entradaDeDatos2() {
+		
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String Ejercicio2A() {
+		
+		ps.println("Ingrese el primer apellido: ");
+		String apellido1 = entradaDeDatos2();
+		ps.println("Ingrese el segundo apellido: ");
+		String apellido2 = entradaDeDatos2();
+		ps.println("Ingrese el tercer apellido: ");
+		String apellido3 = entradaDeDatos2();
+		
+		return apellido1;
+	}
+	
+	public static String Ejercicio2B() {
+		
+		
+		
+		return "";
+	}
+
+	public static String Ejercicio2C() {
+		ps.println("Ingrese el numero: ");
+		String dato = entradaDeDatos2();
+		int num = Integer.parseInt(dato);
+		
+		if(num % 2 == 0) {
+			return "El numero es par";
+		}else {
+			return "El numero es impar";
+		}
+	}
+
+	public static String Ejercicio2D() {
+		
+		ps.println("Ingrese el primer numero: ");
+		String dato1 = entradaDeDatos2();
+		int num1 = Integer.parseInt(dato1);
+		ps.println("Ingrese el segundo numero: ");
+		String dato2 = entradaDeDatos2();
+		int num2 = Integer.parseInt(dato2);
+		
+		if(num1 % num2 ==0) {
+			return num1 + " es divisible por " + num2;
+		}else {
+			return num1 + " no es divisible por " + num2;
+		}
+	}
+
 
 }
