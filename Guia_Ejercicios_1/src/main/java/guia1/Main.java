@@ -19,8 +19,16 @@ public class Main {
 					ps.println("5- Ejercicio 1 E");
 					ps.println("6- Ejercicio 1 F");
 					ps.println("7- Ejercicio 1 G");
-					ps.println("8- Ejercicio 1 C");
-					ps.println("9- Ejercicio 1 C");
+					ps.println("8- Ejercicio 2 A");
+					ps.println("9- Ejercicio 2 B");
+					ps.println("10- Ejercicio 2 C");
+					ps.println("11- Ejercicio 2 D");
+					ps.println("12- Ejercicio 2 E");
+					ps.println("13- Ejercicio 2 F");
+					ps.println("14- Ejercicio 2 G");
+					ps.println("15- Ejercicio 2 H");
+					ps.println("16- Ejercicio 3 A");
+
 					ps.println("0- Salir");
 
 					int opcion = Main.leerOpcion();
@@ -55,10 +63,41 @@ public class Main {
 						ps.println(ClaseEjercicios.Ejercicio1G());
 						break;
 					case 8:
-						ps.println("Ejecutando Ejercicio 1 C");
-						ps.println();
+						ps.println("Ejecutando Ejercicio 2 A");
+						ps.println(ClaseEjercicios.Ejercicio2A());
 						break;
-						
+					case 9:
+						ps.println("Ejecutando Ejercicio 2 B");
+						ps.println(ClaseEjercicios.Ejercicio2B());
+						break;
+					case 10:
+						ps.println("Ejecutando Ejercicio 2 C");
+						ps.println(ClaseEjercicios.Ejercicio2C());
+						break;
+					case 11:
+						ps.println("Ejecutando Ejercicio 2 D");
+						ps.println(ClaseEjercicios.Ejercicio2D());
+						break;
+					case 12:
+						ps.println("Ejecutando Ejercicio 2 E");
+						ps.println(ClaseEjercicios.Ejercicio2A());
+						break;
+					case 13:
+						ps.println("Ejecutando Ejercicio 2 F");
+						ps.println(ClaseEjercicios.Ejercicio2A());
+						break;
+					case 14:
+						ps.println("Ejecutando Ejercicio 2 G");
+						ps.println(ClaseEjercicios.Ejercicio2A());
+						break;
+					case 15:
+						ps.println("Ejecutando Ejercicio 2 H");
+						ps.println(ClaseEjercicios.Ejercicio2A());
+						break;
+					case 16:
+						ps.println("Ejecutando Ejercicio 3 A");
+						ps.println(ClaseEjercicios.Ejercicio2A());
+						break;
 					case 0:
 						ps.println("Saliendo del men�...");
 						continuar = false;
