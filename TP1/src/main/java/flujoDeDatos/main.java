@@ -50,8 +50,8 @@ public class main {
 	                int numero2 = vector1[i + 1] - 3;
 
 	                try {
-	                    if (numero2 <= 0) {
-	                        throw new ArithmeticException("División por cero o negativo");
+	                    if (numero2 == 0) {
+	                        throw new ArithmeticException("División por cero");
 	                    }
 	                    double resultado = (double) numero1 / numero2;
 	                    resultadosWriter.write(numero1 + " / " + numero2 + " = " + resultado + "\n");
@@ -65,8 +65,8 @@ public class main {
 	                int numero2 = vector2[i + 1] - 3;
 
 	                try {
-	                    if (numero2 <= 0) {
-	                        throw new ArithmeticException("División por cero o negativo");
+	                    if (numero2 == 0) {
+	                        throw new ArithmeticException("División por cero");
 	                    }
 	                    double resultado = (double) numero1 / numero2;
 	                    resultadosWriter.write(numero1 + " / " + numero2 + " = " + resultado + "\n");
