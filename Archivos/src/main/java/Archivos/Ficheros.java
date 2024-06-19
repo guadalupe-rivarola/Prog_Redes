@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -131,6 +132,7 @@ public class Ficheros {
 		
 	}
 
+	//escribir en archivo
 	public void createFileBuffe(File a) {
 		
 		BufferedWriter bw = null;
@@ -221,5 +223,118 @@ public class Ficheros {
 		}
 		
 		return texto;
+	}
+
+	//parte que falta de threads
+	//editar o borrar archivo
+	public void editarArchivo(File original) {
+		File copia = new File("copia.tmp");
+		//copia.deleteOnExit(); // se borra cuando se deja de usar
+		FileReader Fr = null;
+		BufferedReader Br = null;
+		FileWriter Fw = null;
+		PrintWriter Pw = null;
+		
+		try {
+			
+		  Fr = new FileReader(original);
+		  Br = new BufferedReader(Fr);
+		  
+		  if(!copia.exists()) {
+			  Fw = new FileWriter(copia);
+			  Pw = new PrintWriter(Fw);
+			  String renglon = "";
+			  while( (renglon = Br.readLine()) != null) 
+			  {
+				  //sobre el STRING renglon puedo trabajar
+				  //mantengo los datos?
+				  //elimino los datos?
+				  //o edito los datos?
+				  //Pw.println(renglon.toLowerCase());
+				  Pw.println(renglon.toUpperCase());
+				  //Pw.println(renglon.replaceAll(";", ","));
+			  }
+			  Pw.close();
+			  Fw.close();
+
+		  }
+		  
+		  Br.close();
+		  Fr.close();
+		  
+		  if(original.exists())
+			  original.delete();
+		  
+		  if(copia.exists())
+			  copia.renameTo(original);
+		  
+		}catch(FileNotFoundException ex){
+			Logger.getLogger(Ficheros.class.getName()).log(Level.WARNING,null,ex);
+			
+		}catch(IOException ex){
+			Logger.getLogger(Ficheros.class.getName()).log(Level.WARNING,null,ex);
+			
+	}finally{
+		
+	}
+	}
+
+	public void eliminarArchivo(File original) {
+		File copia = new File("copia.dat");
+		FileReader Fr = null;
+		BufferedReader Br = null;
+		FileWriter Fw = null;
+		PrintWriter Pw = null;
+		ArrayList<String> renglones= new ArrayList<>();
+		try {
+			
+			  Fr = new FileReader(original);
+			  Br = new BufferedReader(Fr);
+			  
+			  String renglon = "";
+			  while( (renglon = Br.readLine()) != null) 
+			  {
+				  //forma2
+				  //renglones.add(renglon);
+				  //forma1
+				  if(!renglon.contains("1"))
+					renglones.add(renglon.toLowerCase());
+			  }
+			  
+			  Br.close();
+			  Fr.close();
+			  
+			  /* parte de la forma2
+			  for( String r : renglones) {
+				  if(r.contains("1"))
+					  renglones.remove(r);
+			  }
+			  */
+			  Fw = new FileWriter(copia,true);
+			  Pw = new PrintWriter(Fw);
+			  
+			  for(String r : renglones) {
+				  Pw.println( r );
+			  }
+			  
+			  Fw.close();
+			  Pw.close();
+			  
+			  if(original.exists())
+				  original.delete();
+			  
+			  if(copia.exists())
+				  copia.renameTo(original);
+			  
+			}catch(FileNotFoundException ex){
+				Logger.getLogger(Ficheros.class.getName()).log(Level.WARNING,null,ex);
+				
+			}catch(IOException ex){
+				Logger.getLogger(Ficheros.class.getName()).log(Level.WARNING,null,ex);
+				
+		}finally{
+			
+		}		
+		
 	}
 }	
