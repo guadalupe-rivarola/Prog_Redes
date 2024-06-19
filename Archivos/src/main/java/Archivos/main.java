@@ -11,15 +11,18 @@ public class main {
 		Ficheros archivo = new Ficheros("","Mario", ".txt");
 		//Ficheros archivo = new Ficheros();
 		//archivo.createFilePrintStream(archivo.getArchivo()); 
-		archivo.createFilePrinter(archivo.getArchivo());
+		//archivo.createFilePrinter(archivo.getArchivo());
 		//archivo.datosArchivo();
 		//forma1
-		ps.println( archivo.leerCharChar(archivo.getArchivo() ) );
+		//ps.println( archivo.leerCharChar(archivo.getArchivo() ) );
 		//forma
-		ps.println(Utils.ANSI_YELLOW + archivo.leerConReader(archivo.getArchivo()) + Utils.ANSI_RESET);
-		ps.println("Color normal");
-		ps.println(Utils.ANSI_PURPLE + "\t\t colores mas lindos");
-		ps.println(Utils.ANSI_MAGENTA + "\t\t lau" + Utils.ANSI_RESET);
+		//ps.println(Utils.ANSI_YELLOW + archivo.leerConReader(archivo.getArchivo()) + Utils.ANSI_RESET);
+		//ps.println("Color normal");
+		//ps.println(Utils.ANSI_PURPLE + "\t\t colores mas lindos");
+		//ps.println(Utils.ANSI_MAGENTA + "\t\t lau" + Utils.ANSI_RESET);
+		//archivo.editarArchivo(archivo.getArchivo());
+		archivo.eliminarArchivo(archivo.getArchivo());
+	
 	}
 
 }
