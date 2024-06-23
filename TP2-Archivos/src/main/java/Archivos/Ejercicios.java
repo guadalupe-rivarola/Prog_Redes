@@ -67,7 +67,7 @@ public class Ejercicios {
 	
 	static int convertirEntero() {
         ps.println("Ingrese texto para convertir a entero: ");
-        String texto = leerDatos();
+        String texto =leerDatos();
         int numeroEntero = Integer.parseInt(texto);
         ps.println("El numero " + numeroEntero + " ahora es de tipo entero");
         return numeroEntero; 
