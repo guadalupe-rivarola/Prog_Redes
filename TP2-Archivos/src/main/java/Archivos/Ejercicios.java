@@ -1,5 +1,4 @@
 package Archivos;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +9,6 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 public class Ejercicios {
 	static PrintStream ps = new PrintStream(System.out);
@@ -31,69 +29,57 @@ public class Ejercicios {
 			
 			return cadena;
 	}
-	/*	
-	static String Ejercicio1() {
-		ps.println("Ingrese el texto: ");
-		String texto = leerDatos();	
+	
+	static  String ingresarDato() {
+		ps.print("Ingrese el texto a devolver: ");
+		String texto = leerDatos();
 		return texto;
 	}
 	
-	static String  verificarFloat(){
-	 ps.println("Ingrese el texto a verificar: ");
-	 String texto = leerDatos();
-	 String numeros = "";
-		    for (int i = 0; i < texto.length(); i++) {
-		        char caracter = texto.charAt(i);
-		        if (caracter >= '0' && caracter <= '9') {
-		            numeros += caracter;
-		        }
-		    }
+	static String IdentificarDato() {
+	    ps.println("Ingrese el texto a identificar: ");
+	    String dato = leerDatos();
+	    boolean tienePunto = false;
+	    boolean esNumero = true;
 
-		    if (texto.contains(".")) {
-		        float numComa = Float.parseFloat(numeros);
-		        return "Número con coma encontrado: " + numComa;
-		    } else {
-		        int numero = 0;
-		        try {
-		            numero = Integer.parseInt(numeros);
-		        } catch (NumberFormatException e) {
-		            ps.println("El texto no contiene numeros.");
-		        }
-		        return "Número entero encontrado: " + numero;
-		    }
-		}
- 
-
-	
-	static String verificarFloat() {
-	    ps.println("Ingrese el texto a verificar: ");
-	    String texto = leerDatos();
-	    String numeros = "";
-	    boolean puntoEncontrado = false; // Bandera para verificar si ya se encontró un punto decimal
-
-	    for (int i = 0; i < texto.length(); i++) {
-	        char caracter = texto.charAt(i);
+	    for (int i = 0; i < dato.length(); i++) {
+	        char caracter = dato.charAt(i);
 	        if (caracter >= '0' && caracter <= '9') {
-	            numeros += caracter;
-	        } else if (caracter == '.' && !puntoEncontrado) { // Si encontramos un punto y no se ha encontrado previamente
-	            numeros += caracter;
-	            puntoEncontrado = true; // Marcamos que se ha encontrado un punto
+	            continue;
+	        } else if ((caracter == '.' || caracter == ',') && !tienePunto) {
+	            tienePunto = true;
+	        } else {
+	            esNumero = false;
+	            break;
 	        }
 	    }
 
-	    if (!numeros.isEmpty()) { // Verificar si se ha encontrado algún número
-	        if (numeros.contains(".")) {
-	            float numComa = Float.parseFloat(numeros);
-	            return "Número con coma encontrado: " + numComa;
+	    if (esNumero) {
+	        if (tienePunto) {
+	            return "El dato ingresado es un número con coma.";
 	        } else {
-	            int numero = Integer.parseInt(numeros);
-	            return "Número entero encontrado: " + numero;
+	            return "El dato ingresado es un número entero.";
 	        }
 	    } else {
-	        return "El texto no contiene números.";
+	        return "El dato ingresado es un texto.";
 	    }
 	}
-*/
+	
+	static int convertirEntero() {
+        ps.println("Ingrese texto para convertir a entero: ");
+        String texto = leerDatos();
+        int numeroEntero = Integer.parseInt(texto);
+        ps.println("El numero " + numeroEntero + " ahora es de tipo entero");
+        return numeroEntero; 
+    }  
+
+	static float convertirDecimal() {
+        ps.println("Ingrese texto para convertir en decimal: ");
+        String texto = leerDatos();
+        float numeroFloat = Float.parseFloat(texto);
+        ps.println("El numero " + numeroFloat + " ahora es de tipo entero");
+        return numeroFloat;
+    }
 	
 	public void crearArchivo(String ruta, String nombre, String extension ) {
 		File archivo = new File(ruta.concat(nombre.concat(extension))); 
@@ -149,7 +135,6 @@ public class Ejercicios {
 			}
 		}
 	
-	 
 	public void leerArchivo(File archivo) {
 		try {
 			FileReader fr = new FileReader(archivo);
