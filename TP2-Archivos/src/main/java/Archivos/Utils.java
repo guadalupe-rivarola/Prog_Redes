@@ -1,7 +1,6 @@
 package Archivos;
 
 public class Utils {
-	
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -20,9 +19,8 @@ public class Utils {
     public static final String ANSI_PURPLE_BRIGHT = "\u001B[95m";
     public static final String ANSI_CYAN_BRIGHT = "\u001B[96m";	    
     public static final String ANSI_BOLD = "\u001B[1m";
-	public static final String ANSI_UNDERLINE = "\u001B[4m";
-	public static final String ANSI_HIDE = "\u001B[8m";
-	public static final String ANSI_CLEAR_SCREEN = "\u001B[2J";	    
+    public static final String ANSI_UNDERLINE = "\u001B[4m";
+    public static final String ANSI_HIDE = "\u001B[8m";
+    public static final String ANSI_CLEAR_SCREEN = "\u001B[2J";	    
     public static final String ANSI_RESET = "\u001B[0m";	
-	
 }
