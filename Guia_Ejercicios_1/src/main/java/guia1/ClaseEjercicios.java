@@ -197,10 +197,11 @@ public class ClaseEjercicios {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 		return null;
 	}
 	
-	public static String Ejercicio2A() {
+	public static void Ejercicio2A() {
 		
 		ps.println("Ingrese el primer apellido: ");
 		String apellido1 = entradaDeDatos2();
@@ -209,14 +210,38 @@ public class ClaseEjercicios {
 		ps.println("Ingrese el tercer apellido: ");
 		String apellido3 = entradaDeDatos2();
 		
-		return apellido1;
+		String[] apellidos = {apellido1, apellido2, apellido3};	
+		Arrays.sort(apellidos);
+		
+		ps.println("Apellidos ordenados alfábeticamente: ");
+		for(String a : apellidos) {
+			ps.println(a);
+		}
 	}
 	
-	public static String Ejercicio2B() {
+	public static void Ejercicio2B() {
+		ps.println("Ingrese el primer número: ");
+		String dato1 = entradaDeDatos2();
+		double num1 = Double.parseDouble(dato1);
+		ps.println("Ingrese el segundo número real: ");
+		String dato2 = entradaDeDatos2();
+		double num2 = Double.parseDouble(dato2);
+		ps.println("Ingrese el tercer número real: ");
+		String dato3 = entradaDeDatos2();
+		double num3 = Double.parseDouble(dato3);
+		ps.println("Ingrese el cuarto número real: ");
+		String dato4 = entradaDeDatos2();
+		double num4 = Double.parseDouble(dato4);		
 		
+		double[] numeros = {num1,num2,num3,num4};	
+		double menor = numeros[0];
 		
-		
-		return "";
+		for(int i=0; i<numeros.length; i++) {
+			if(numeros[i]<menor) {
+				menor = numeros[i];
+			}
+		}
+		ps.println("De los 4 números reales, el menor es: " + menor);
 	}
 
 	public static String Ejercicio2C() {
@@ -225,14 +250,13 @@ public class ClaseEjercicios {
 		int num = Integer.parseInt(dato);
 		
 		if(num % 2 == 0) {
-			return "El numero es par";
+			return "El numero " + num + " es par";
 		}else {
-			return "El numero es impar";
+			return "El numero " + num + " es impar";
 		}
 	}
 
 	public static String Ejercicio2D() {
-		
 		ps.println("Ingrese el primer numero: ");
 		String dato1 = entradaDeDatos2();
 		int num1 = Integer.parseInt(dato1);
@@ -240,12 +264,148 @@ public class ClaseEjercicios {
 		String dato2 = entradaDeDatos2();
 		int num2 = Integer.parseInt(dato2);
 		
-		if(num1 % num2 ==0) {
+		if(num1 % num2 == 0) {
 			return num1 + " es divisible por " + num2;
 		}else {
 			return num1 + " no es divisible por " + num2;
 		}
 	}
 
+	public static String Ejercicio2E() {
+		ps.println("Ingrese su fecha de nacimiento en este formato dd/mm/aa : ");
+		String fecha = entradaDeDatos2();
+		String[] partes = fecha.split("/");
+		int dia = Integer.parseInt(partes[0]);
+		int mes = Integer.parseInt(partes[1]);
+		
+		switch(mes) {
+		case 1:
+			if(dia <= 19) {
+				return "Capricornio";
+			}else {
+				return "Acuario";
+			}
+		case 2:
+			if(dia <= 18) {
+				return "Acuario";
+			}else {
+				return "Piscis";
+			}
+		case 3:
+			if(dia <= 20) {
+				return "Piscis";
+			}else {
+				return "Aries";
+			}
+		case 4:
+			if(dia <= 19) {
+				return "Aries";
+			}else {
+				return "Tauro";
+			}
+		case 5:
+			if(dia <= 20) {
+				return "Tauro";
+			}else {
+				return "Géminis";
+			}
+		case 6:
+			if(dia <= 20) {
+				return "Géminis";
+			}else {
+				return "Cáncer";
+			}
+		case 7:
+			if(dia <= 22) {
+				return "Cáncer";
+			}else {
+				return "Leo";
+			}
+		case 8:
+			if(dia <= 22) {
+				return "Leo";
+			}else {
+				return "Virgo";
+			}
+		case 9:
+			if(dia <= 22) {
+				return "Virgo";
+			}else {
+				return "Libra";
+			}
+		case 10:
+			if(dia <= 22) {
+				return "Libra";
+			}else {
+				return "Escorpio";
+			}
+		case 11:
+			if(dia <= 21) {
+				return "Escorpio";
+			}else {
+				return "Sagitario";
+			}
+		case 12:
+			if(dia <= 21) {
+				return "Sagitario";
+			}else {
+				return "Capricornio";
+			}
+		default: 
+			return "Fecha inválida.";
+		}
+	}
+	
+	public static String Ejercicio2F() {
+		ps.println("Ingrese el nombre y el apellido de la primera persona: ");
+		String persona1 = entradaDeDatos2();
+		ps.println("Ingrese el nombre y el apellido de la segunda persona: ");
+		String persona2 = entradaDeDatos2();
+		
+		if(persona1.length() > persona2.length()) {
+			return "La persona con el nombre y apellido más largo es: " + persona1;
+		}else if(persona2.length() > persona1.length()){
+			return "La persona con el nombre y apellido más largo es: " + persona2;
+		}else {
+			return "Las dos personas tienen la misma longitud en sus nombres y apellidos.";
+		}
+	}
+	
+	public static void Ejercicio2G() {
+		ps.println("Ingrese un número entero: ");
+		String dato = entradaDeDatos2();
+		int num = Integer.parseInt(dato);
+		
+		for(int i=1 ; i<=10 ; i++) {
+			int resultado = num * i;
+			ps.println(num + " x " + i + " = " + resultado);
+		}
+		
+	}
+	
+	public static void Ejercicio2H() {
+		ps.println("Ingrese un número natural: ");
+		String dato = entradaDeDatos2();
+		int num = Integer.parseInt(dato);
+		
+		boolean numPrimo = true;
+		if(num < 2) {
+			numPrimo = false;
+		}else {
+			for(int i=2 ; i<= num / 2 ; i++) {
+				if(num % i == 0) {
+					numPrimo = false;
+					break;
+				}
+			}
+		}
+		
+		if(numPrimo) {
+			ps.println(num + " es un número primo");
+		}else {
+			ps.println(num + " no es un número primo.");
+		}
+	}
 
+	//ejercicio 3 y 4
 }
