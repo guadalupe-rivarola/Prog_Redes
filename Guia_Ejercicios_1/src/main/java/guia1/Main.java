@@ -64,11 +64,11 @@ public class Main {
 						break;
 					case 8:
 						ps.println("Ejecutando Ejercicio 2 A");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						ClaseEjercicios.Ejercicio2A();
 						break;
 					case 9:
 						ps.println("Ejecutando Ejercicio 2 B");
-						ps.println(ClaseEjercicios.Ejercicio2B());
+						ClaseEjercicios.Ejercicio2B();
 						break;
 					case 10:
 						ps.println("Ejecutando Ejercicio 2 C");
@@ -80,23 +80,23 @@ public class Main {
 						break;
 					case 12:
 						ps.println("Ejecutando Ejercicio 2 E");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						ps.println(ClaseEjercicios.Ejercicio2E());
 						break;
 					case 13:
 						ps.println("Ejecutando Ejercicio 2 F");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						ps.println(ClaseEjercicios.Ejercicio2F());
 						break;
 					case 14:
 						ps.println("Ejecutando Ejercicio 2 G");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						ClaseEjercicios.Ejercicio2G();
 						break;
 					case 15:
 						ps.println("Ejecutando Ejercicio 2 H");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						ClaseEjercicios.Ejercicio2H();
 						break;
 					case 16:
 						ps.println("Ejecutando Ejercicio 3 A");
-						ps.println(ClaseEjercicios.Ejercicio2A());
+						//ps.println(ClaseEjercicios.Ejercicio2A());
 						break;
 					case 0:
 						ps.println("Saliendo del men�...");
