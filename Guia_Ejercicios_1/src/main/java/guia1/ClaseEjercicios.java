@@ -1,8 +1,15 @@
 package guia1;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,9 +17,6 @@ import java.util.Arrays;
 public class ClaseEjercicios {
 	
 	static PrintStream ps = new PrintStream(System.out);
-	
-	static InputStreamReader isr = new InputStreamReader(System.in);
-	static BufferedReader br = new BufferedReader(isr);
 	
 	public static String entradaDeDatos1() {	
 		String cadena = "";
@@ -190,6 +194,8 @@ public class ClaseEjercicios {
 	}
 
 	public static String entradaDeDatos2() {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
 		
 		try {
 			return br.readLine();
@@ -407,5 +413,367 @@ public class ClaseEjercicios {
 		}
 	}
 
-	//ejercicio 3 y 4
+	public static void Ejercicio3A() {
+		File archivo = new File("Ejercicio3A.txt");
+		ps.println("Ingrese 5 datos separados por ',': ");
+		String dato = entradaDeDatos2();
+		String[] datos = dato.split(",");
+		
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		
+			try {
+				fw = new FileWriter(archivo, true);
+				pw = new PrintWriter(fw);
+				pw.print("El último dato ingresado es:");
+				pw.println(datos[4]);
+				pw.flush();
+			} catch (IOException e) {
+				Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+			}finally {
+				try {
+					if(pw != null)
+						pw.close();
+					if(fw != null) 
+						fw.close();
+					} catch (IOException e) {
+						Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+					}
+			}	
+	}
+	
+	public static void Ejercicio3B() {
+		File archivo = new File("Ejercicio3B.txt");
+		ps.println("Cuál es la cantidad de valores que va a ingresar: ");
+		String dato = entradaDeDatos2();
+		int cant = Integer.parseInt(dato);
+		
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		
+			try {
+				fw = new FileWriter(archivo, false);
+				pw = new PrintWriter(fw);
+				for (int i = 0; i < cant; i++) {
+					ps.println("Ingrese el dato: ");
+					String valor = entradaDeDatos2();
+				    if (valor.matches(".*\\d.*") ) { //dato investigado en internet
+				    	pw.println(valor);  
+				    	pw.flush();
+				    }    
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(pw != null)
+						pw.close();
+					if(fw != null) 
+						fw.close();
+				} catch (IOException e) {
+						Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+				}
+			}
+		}
+
+	public static void Ejercicio3C() {
+		File archivo = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/números.txt");
+		
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		
+		try {
+			fw = new FileWriter(archivo, false);
+			pw = new PrintWriter(fw);
+			
+			for(int i=0; i<=1000;i++) {
+				if(i % 2 == 0) {
+					pw.println(i);
+				}
+					
+			}
+		} catch (IOException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+			try {
+				if(pw != null)
+					pw.close();
+				if(fw != null) 
+					fw.close();
+			} catch (IOException e) {
+				Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+			}
+		}
+	}
+
+	public static void Ejercicio3D() {
+		File archivo = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/números.txt");
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+			 fr = new FileReader(archivo);
+			 br = new BufferedReader(fr);
+			String aux;
+			
+			ps.println("Datos del archivo: ");
+			while ((aux = br.readLine()) != null) {
+				ps.println(aux);
+			}
+		} catch (FileNotFoundException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(fr != null)
+					fr.close();
+				if(br != null) 
+					br.close();
+			} catch (IOException e) {
+				Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+			}
+		}
+	}
+
+	public static void Ejercicio3E() {
+		File original = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/números.txt");
+		File copia = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/copia.tmp");
+		FileReader fr = null;
+		BufferedReader br = null;
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		
+		try {
+			 fr = new FileReader(original);
+			 br = new BufferedReader(fr);
+
+			if(!copia.exists()) {
+				fw = new FileWriter(copia);
+				pw = new PrintWriter(fw);
+				String aux = "";
+				while ((aux = br.readLine()) != null) {
+					int num = Integer.parseInt(aux);
+					if(num % 3 != 0) {
+						pw.println(aux);
+				}
+				}
+			}
+			if(original.exists())
+				original.delete();
+			if(copia.exists())
+				copia.renameTo(original);
+		} catch (FileNotFoundException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		} catch (IOException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+            try {
+                if (pw != null)
+                    pw.close();
+                if (fw != null)
+                    fw.close();
+                if (br != null)
+                    br.close();
+                if (fr != null)
+                    fr.close();
+            } catch (IOException e) {
+                Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+            }
+         }
+	}
+
+	public static void Ejercicio3F() {
+		File archivo = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/números.txt");
+		File archivo2 = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/primos.dat");
+		
+		FileReader fr = null;
+		BufferedReader br = null;
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		try {
+			fr = new FileReader(archivo);
+			br = new BufferedReader(fr);
+			fw = new FileWriter(archivo2);
+			pw = new PrintWriter(fw);
+			String aux;
+		
+			while((aux = br.readLine()) != null) {
+				int num = Integer.parseInt(aux);
+				boolean numPrimo = true;
+				
+				if(num < 2) {
+					numPrimo = false;
+				}else {
+					for(int i=2; i <= num / 2; i++) {
+						if(num % i == 0) {
+							numPrimo = false;
+							break;
+						}
+					}
+				}
+				if(numPrimo) {
+					pw.println(num);
+				}
+			}
+		}catch(IOException e){
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+		}finally {
+			try {
+				if(fr != null)
+					fr.close();
+				if(br != null) 
+					br.close();
+				if(fw != null)
+					fw.close();
+				if(pw != null) 
+					pw.close();
+			} catch (IOException e) {
+				Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+			}
+
+		}
+	}
+
+
+	public static void Ejercicio3G() {
+		File original = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/caracteres.dat");
+		File copia = new File("C:/Users/guada/OneDrive/Documentos/GitHub/Prog_Redes/archivos/copia.tmp");
+		FileReader fr = null;
+		BufferedReader br = null;
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		//ingresar palabras
+		try {
+			fw = new FileWriter(original, false);
+			pw = new PrintWriter(fw);
+			for(int i=0;i<=10;i++) {
+				ps.println("Ingrese una palabra que contenga 'ñ': ");
+				String dato = entradaDeDatos2();
+				pw.println(dato);					
+				pw.flush();
+			}
+		 } catch (FileNotFoundException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		} catch (IOException e) {		
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+            try {
+                if (fw != null)
+                    fw.close();
+                if (pw != null)
+                    pw.close();
+            } catch (IOException e) {
+                Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+            }
+		}
+		
+		//mostrar palabras
+		try {
+			fr = new FileReader(original);
+			br = new BufferedReader(fr);
+			String aux;
+			ps.println("Fichero original: ");
+			while((aux=br.readLine()) != null) {
+				ps.println(aux);
+			}
+		} catch (FileNotFoundException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		} catch (IOException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+            try {
+                if (fr != null)
+                    fr.close();
+                if (br != null)
+                    br.close();
+            } catch (IOException e) {
+                Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+            }
+        }
+		
+		//reemplazar palabras
+		try {
+			fw = new FileWriter(copia, false);
+			pw = new PrintWriter(fw);
+			fr = new FileReader(original);
+			br = new BufferedReader(fr);
+			String aux;
+			while((aux=br.readLine()) != null){
+				String datos = aux.replace("ñ", "nie-nio");
+				pw.println(datos);
+				pw.flush();
+			}
+		} catch (IOException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+            try {
+                if (pw != null)
+                    pw.close();
+                if (fw != null)
+                    fw.close();
+                if (br != null)
+                    br.close();
+                if (fr != null)
+                    fr.close();
+            } catch (IOException e) {
+                Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+            }
+		}
+		if(original.exists())
+			original.delete();
+		if(copia.exists())
+			copia.renameTo(original);
+		
+		//mostrar palabras nuevas
+		try {
+			fr = new FileReader(original);
+			br = new BufferedReader(fr);
+			String aux;
+			ps.println("Fichero arreglado: ");
+			while((aux=br.readLine()) != null) {
+				ps.println(aux);
+			}
+		} catch (FileNotFoundException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		} catch (IOException e) {
+			Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+            try {
+                if (fr != null)
+                    fr.close();
+                if (br != null)
+                    br.close();
+            } catch (IOException e) {
+                Logger.getLogger(ClaseEjercicios.class.getName()).log(Level.WARNING, null, e);
+            }
+		}
+	}
+
+	public static void Ejercicio4A() {
+	
+	}
+	
+	public static void Ejercicio4B() {
+		
+	}
+	
+	public static void Ejercicio4C() {
+		
+	}
+	
+	public static void Ejercicio4D() {
+		
+	}
+	
+	public static void Ejercicio4E() {
+		
+	}
+	
+	public static void Ejercicio4F() {
+		
+	}
+	
+	public static void Ejercicio4G() {
+		
+	}
 }

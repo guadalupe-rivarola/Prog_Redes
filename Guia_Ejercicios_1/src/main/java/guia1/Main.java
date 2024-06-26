@@ -28,6 +28,19 @@ public class Main {
 					ps.println("14- Ejercicio 2 G");
 					ps.println("15- Ejercicio 2 H");
 					ps.println("16- Ejercicio 3 A");
+					ps.println("17- Ejercicio 3 B");
+					ps.println("18- Ejercicio 3 C");
+					ps.println("19- Ejercicio 3 D");
+					ps.println("20- Ejercicio 3 E");
+					ps.println("21- Ejercicio 3 F");
+					ps.println("22- Ejercicio 3 G");
+					ps.println("23- Ejercicio 4 A");
+					ps.println("24- Ejercicio 4 B");
+					ps.println("25- Ejercicio 4 C");
+					ps.println("26- Ejercicio 4 D");
+					ps.println("27- Ejercicio 4 E");
+					ps.println("28- Ejercicio 4 F");
+					ps.println("29- Ejercicio 4 G");
 
 					ps.println("0- Salir");
 
@@ -96,7 +109,59 @@ public class Main {
 						break;
 					case 16:
 						ps.println("Ejecutando Ejercicio 3 A");
-						//ps.println(ClaseEjercicios.Ejercicio2A());
+						ClaseEjercicios.Ejercicio3A();
+						break;
+					case 17:
+						ps.println("Ejecutando Ejercicio 3 B");
+						ClaseEjercicios.Ejercicio3B();
+						break;
+					case 18:
+						ps.println("Ejecutando Ejercicio 3 C");
+						ClaseEjercicios.Ejercicio3C();
+						break;
+					case 19:
+						ps.println("Ejecutando Ejercicio 3 D");
+						ClaseEjercicios.Ejercicio3D();
+						break;
+					case 20:
+						ps.println("Ejecutando Ejercicio 3 E");
+						ClaseEjercicios.Ejercicio3E();
+						break;
+					case 21:
+						ps.println("Ejecutando Ejercicio 3 F");
+						ClaseEjercicios.Ejercicio3F();
+						break;
+					case 22:
+						ps.println("Ejecutando Ejercicio 3 G");
+						ClaseEjercicios.Ejercicio3G();
+						break;
+					case 23:
+						ps.println("Ejecutando Ejercicio 4 A");
+						ClaseEjercicios.Ejercicio4A();
+						break;
+					case 24:
+						ps.println("Ejecutando Ejercicio 4 B");
+						ClaseEjercicios.Ejercicio4B();
+						break;
+					case 25:
+						ps.println("Ejecutando Ejercicio 4 C");
+						ClaseEjercicios.Ejercicio4C();
+						break;
+					case 26:
+						ps.println("Ejecutando Ejercicio 4 D");
+						ClaseEjercicios.Ejercicio4D();
+						break;
+					case 27:
+						ps.println("Ejecutando Ejercicio 4 E");
+						ClaseEjercicios.Ejercicio4E();
+						break;
+					case 28:
+						ps.println("Ejecutando Ejercicio 4 F");
+						ClaseEjercicios.Ejercicio4F();
+						break;
+					case 29:
+						ps.println("Ejecutando Ejercicio 4 G");
+						ClaseEjercicios.Ejercicio4G();
 						break;
 					case 0:
 						ps.println("Saliendo del men�...");
