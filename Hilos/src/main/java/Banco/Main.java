@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Clase principal que inicializa el banco y crea hilos para realizar transferencias entre cuentas.
  */
-public class main {
+public class Main {
 
     // Número total de cuentas a crear en el banco
     public static int cantCuentas = 100;
