@@ -22,7 +22,8 @@ public class Main {
         Random rand = new Random(System.currentTimeMillis());
         
         // Crea una instancia del banco con un número de cuentas y un monto inicial aleatorio
-        Banco bancoNacion = new Banco(cantCuentas, rand.nextInt(2000) + 3000, "Nacion");
+        int cantCuentas = rand.nextInt(2000) + 3000;
+        Banco bancoNacion = new Banco(cantCuentas, cantCuentas, "Frances");
         
         ps.printf(Utils.ANSI_WHITE_BACKGROUND + "\t\t\t" + Utils.ANSI_PURPLE + "C.C creadas: %d \t\t\n" + Utils.ANSI_RESET, cantCuentas);
         ps.printf(Utils.ANSI_WHITE_BACKGROUND + "\t\t\t" + Utils.ANSI_PURPLE + "Banco %s \t\t\t" + Utils.ANSI_RESET, bancoNacion.getName());

@@ -38,7 +38,7 @@ public class CajaHilo extends Thread{
 	PrintStream ps = new PrintStream(System.out);
 	
 	public void procesarCompra(Map<String, Integer> changuito) {
-		ps.printf("Cleinte: %s - (%d) \n", p.getNombre(), p.getDni());
+		//ps.printf("Cleinte: %s - (%d) \n", p.getNombre(), p.getDni());
 		for(Map.Entry<String, Integer> c: changuito.entrySet()) {
 			ps.printf("Caja No. %d - (%s)\n", this.getNumCaja(), this.getNombreCajero());
 
@@ -85,11 +85,11 @@ public class CajaHilo extends Thread{
 	}
 
 	public ArrayList<Persona> getFilaCleintes() {
-		return filaCleintes;
+		return filaClientes;
 	}
 
 	public void setFilaCleintes(ArrayList<Persona> filaCleintes) {
-		this.filaCleintes = filaCleintes;
+		this.filaClientes = filaCleintes;
 	}
 	
 	

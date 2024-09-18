@@ -1,5 +1,5 @@
 package hilos;
 
-public class Seguridad {
+public class Seguridad extends Thread {
 
 }

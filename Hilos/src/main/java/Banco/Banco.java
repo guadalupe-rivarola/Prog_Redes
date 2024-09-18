@@ -38,7 +38,7 @@ public class Banco {
      * @param nombre Nombre del banco.
      */
     public Banco(int cantCuentas, int montoInicial, String nombre) {
-        ps.printf("\n" + Colores.ANSI_WHITE_BACKGROUND + "\t\t\t" + Colores.ANSI_BLACK + "BANCO CREADO \t\t\t\n" + Colores.ANSI_RESET);
+        ps.printf("\n" + Utils.ANSI_WHITE_BACKGROUND + "\t\t\t" + Utils.ANSI_BLACK + "BANCO CREADO \t\t\t\n" + Utils.ANSI_RESET);
 
         cuentas = new HashMap<>();
         

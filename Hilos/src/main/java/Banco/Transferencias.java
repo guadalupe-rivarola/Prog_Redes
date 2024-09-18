@@ -41,8 +41,8 @@ public class Transferencias extends Thread {
     @Override
     public void run() {
         try {
-            ps.printf("\n" + Colores.ANSI_BLUE_BACKGROUND + "\t\t\t" + Colores.ANSI_GREEN + "Inicio de Transferencia \t\t" + Colores.ANSI_RESET);
-            ps.printf("\n" + Colores.ANSI_BLUE_BACKGROUND + "\t\t\t" + Colores.ANSI_GREEN + "Hilo: %s Banco:%s \t\t" + Colores.ANSI_RESET, this.currentThread().getName(), this.getName());
+            ps.printf("\n" + Utils.ANSI_BLUE_BACKGROUND + "\t\t\t" + Utils.ANSI_GREEN + "Inicio de Transferencia \t\t" + Utils.ANSI_RESET);
+            ps.printf("\n" + Utils.ANSI_BLUE_BACKGROUND + "\t\t\t" + Utils.ANSI_GREEN + "Hilo: %s Banco:%s \t\t" + Utils.ANSI_RESET, this.currentThread().getName(), this.getName());
 
             while (vivo) {
                 // Genera un n�mero de cuenta destino diferente a la cuenta de origen
@@ -51,7 +51,7 @@ public class Transferencias extends Thread {
                     cuentaDestino = rand.nextInt(100);
                 }
 
-                ps.printf("\n" + Colores.ANSI_BLUE_BACKGROUND + "\t\t\t" + Colores.ANSI_GREEN + "C.C:%d a C.C:Cuenta-%d  Monto:%d$ \t\t\n" + Colores.ANSI_RESET, this.cuentaOrigen, this.cuentaDestino, this.monto);
+                ps.printf("\n" + Utils.ANSI_BLUE_BACKGROUND + "\t\t\t" + Utils.ANSI_GREEN + "C.C:%d a C.C:Cuenta-%d  Monto:%d$ \t\t\n" + Utils.ANSI_RESET, this.cuentaOrigen, this.cuentaDestino, this.monto);
 
                 // Realiza la transferencia
                 banco.transferir(cuentaOrigen, cuentaDestino, this.monto);
@@ -63,7 +63,7 @@ public class Transferencias extends Thread {
                 this.matar();
             } // while
             
-            ps.printf("\n" + Colores.ANSI_BLUE_BACKGROUND + "\t\t\t" + Colores.ANSI_GREEN + "TRANSFERENCIA: %s" + Colores.ANSI_RED + " FINALIZADA \t\t\n\n" + Colores.ANSI_RESET, this.currentThread().getName());
+            ps.printf("\n" + Utils.ANSI_BLUE_BACKGROUND + "\t\t\t" + Utils.ANSI_GREEN + "TRANSFERENCIA: %s" + Utils.ANSI_RED + " FINALIZADA \t\t\n\n" + Utils.ANSI_RESET, this.currentThread().getName());
 
         } catch (InterruptedException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
