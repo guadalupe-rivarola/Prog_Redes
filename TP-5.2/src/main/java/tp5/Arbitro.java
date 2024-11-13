@@ -6,12 +6,13 @@ import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.PrintStream;
 
 public class Arbitro {
 	
 	private static final Logger log = Logger.getLogger(Arbitro.class.getName());
 	private long tiempoInicio;
-	
+	PrintStream ps = new PrintStream( System.out );
 	public Arbitro() {
 		log.setLevel(Level.INFO);
 	}
@@ -57,9 +58,10 @@ public class Arbitro {
 	        long minutos = TimeUnit.MILLISECONDS.toMinutes(equi.getTiempoTotal());
 	        long segundos = TimeUnit.MILLISECONDS.toSeconds(equi.getTiempoTotal()) % 60;
 	
-	        System.out.printf("Posición %d: %s - Tiempo: %02d:%02d minutos\n", posicion, equi.getNombreEquipo(), minutos, segundos);
+	        ps.printf("Posición %d: %s - Tiempo: %02d:%02d minutos\n", posicion, equi.getNombreEquipo(), minutos, segundos);
 	        ultimoTiempo = equi.getTiempoTotal();
 	    }
+	    
 	
 	 
 	    log.info(String.format("Carrera completada en %02d:%02d minutos.\n", minutosCarrera, segundosCarrera));

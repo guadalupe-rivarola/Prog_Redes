@@ -16,7 +16,7 @@ public class Equipo {
 		this.arbitro= arbitro;
 		
 		for(int i=0;i<4;i++) {
-			Atleta atleta = new Atleta(nombreEquipo + "-Atleta" + (i+1), this);
+			Atleta atleta = new Atleta(nombreEquipo + " _Atleta" + (i+1), this);
 			atletas.add(atleta);
 			
 		}
