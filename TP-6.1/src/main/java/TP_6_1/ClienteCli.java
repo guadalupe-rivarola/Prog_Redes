@@ -88,7 +88,7 @@ public class ClienteCli implements Runnable {
 					
 					if(cli.getNickName().toLowerCase().equalsIgnoreCase(destino) && this.isConected )
 					{
-						cli.dosCliente.writeUTF(Servidor.ANSI_YELLOW 
+						cli.dosCliente.writeUTF(Servidor.ANSI_RED     //punto 3
 								+this.nickName
 								+ ":"
 								+Servidor.ANSI_RESET
